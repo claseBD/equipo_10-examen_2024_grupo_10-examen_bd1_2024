@@ -66,4 +66,6 @@ WHERE sede LIKE 'comp%' AND name LIKE '%ar';
 SELECT * FROM empleado
 WHERE ID >50000;
 
-
+SELECT sede, COUNT(*) AS total_empleados
+FROM empleado
+GROUP BY sede;
