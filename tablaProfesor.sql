@@ -68,6 +68,45 @@ END //
 -- SELECT SUM(salario) AS total_salario
 -- FROM profesor;
 
+-- Reunion Natural:
+-- SELECT ID, nombre, asignatura, salario
+-- FROM profesor;
+
+-- Producto cartesiano:
+-- SELECT *
+-- FROM sede
+-- CROSS JOIN profesor;
+
+-- ausente por la derecha
+-- SELECT 
+--   p.ID,
+--   p.nombre,
+--   p.asignatura,
+--   p.salario
+-- FROM 
+--   sedes s
+-- RIGHT JOIN 
+--   profesor p
+-- ON 
+--   s.nombre_departamento = p.asignatura
+-- WHERE 
+--   s.nombre_departamento IS NULL;
+
+-- Informacion ausente por la izquierda
+
+-- SELECT 
+--   s.nombre_departamento,
+--   s.edificio,
+--   s.presupuesto
+-- FROM 
+--   sedes s
+-- LEFT JOIN 
+--   profesor p
+-- ON 
+--   s.nombre_departamento = p.asignatura
+-- WHERE 
+--   p.asignatura IS NULL;
+
 
 
 
