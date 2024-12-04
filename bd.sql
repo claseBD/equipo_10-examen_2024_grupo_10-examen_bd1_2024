@@ -99,56 +99,56 @@ END //
 
 -- Diferencia
 
-SELECT 
-  nombre_departamento
-FROM 
-  sedes
+-- SELECT 
+--   nombre_departamento
+-- FROM 
+--   sedes
 
-EXCEPT
+-- EXCEPT
 
-SELECT 
-  asignatura
-FROM 
-  profesor;
+-- SELECT 
+--   asignatura
+-- FROM 
+--   profesor;
 
 -- Reunion Natural
-SELECT *
-FROM sedes
-NATURAL JOIN profesor;
+-- SELECT *
+-- FROM sedes
+-- NATURAL JOIN profesor;
 
 -- Informacion ausente por la izquierda
 
-SELECT 
-  s.nombre_departamento,
-  s.edificio,
-  s.presupuesto
-FROM 
-  sedes s
-LEFT JOIN 
-  profesor p
-ON 
-  s.nombre_departamento = p.asignatura
-WHERE 
-  p.asignatura IS NULL;
+-- SELECT 
+--   s.nombre_departamento,
+--   s.edificio,
+--   s.presupuesto
+-- FROM 
+--   sedes s
+-- LEFT JOIN 
+--   profesor p
+-- ON 
+--   s.nombre_departamento = p.asignatura
+-- WHERE 
+--   p.asignatura IS NULL;
 
 
 -- Informacion ausente por la derecha
-SELECT 
-  p.ID,
-  p.nombre,
-  p.asignatura,
-  p.salario
-FROM 
-  sedes s
-RIGHT JOIN 
-  profesor p
-ON 
-  s.nombre_departamento = p.asignatura
-WHERE 
-  s.nombre_departamento IS NULL;
+-- SELECT 
+--   p.ID,
+--   p.nombre,
+--   p.asignatura,
+--   p.salario
+-- FROM 
+--   sedes s
+-- RIGHT JOIN 
+--   profesor p
+-- ON 
+--   s.nombre_departamento = p.asignatura
+-- WHERE 
+--   s.nombre_departamento IS NULL;
 
 
 -- Producto cartesiano
-SELECT *
-FROM tabla1
-CROSS JOIN tabla2;
+-- SELECT *
+-- FROM tabla1
+-- CROSS JOIN tabla2;
