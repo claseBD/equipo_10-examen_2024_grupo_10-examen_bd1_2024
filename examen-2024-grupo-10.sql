@@ -21,6 +21,8 @@ INSERT INTO `formaciones` (`id`, `nombre`, `definicion`, `empresario`) VALUES
 (10, 'Filosofia', 'FIL_010', 'Andres');
 
 
+--Trigger que actualiza automáticamente el valor de la columna definicion en la misma tabla cuando se inserte o actualice un registro, asegurándose de que siempre sea en mayúsculas.
+
 DELIMITER $$
 
 CREATE TRIGGER `before_insert_or_update_formaciones`
@@ -31,3 +33,30 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+
+--Respuestas a las preguntas:
+
+--a)No hay operación posible con una sola tabla.
+
+--b)
+SELECT `id`, `nombre`, `definicion`, `empresario` FROM `formaciones`
+WHERE `nombre` LIKE '%Ingles%'
+UNION
+SELECT `id`, `nombre`, `definicion`, `empresario`FROM `formaciones`
+WHERE `empresario = 'Fernando'`;
+
+--c)No hay operación posible con una sola tabla.
+
+--d)
+SELECT COUNT(f.nombre) FROM formaciones as f;
+
+--e)No hay operación posible con una sola tabla.
+
+--f)No hay operación posible con una sola tabla.
+
+--g)No hay operación posible con una sola tabla.
+
+--h)No hay operación posible con una sola tabla.
+
