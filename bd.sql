@@ -15,4 +15,13 @@ CREATE TABLE IF NOT EXISTS `sedes` (
 --
 
 INSERT INTO `sedes` (`nombre_departamento`, `edificio`, `presupuesto`) VALUES
-('English', 'Uneatlantico', '90000.00'),
+('Ingles', 'Uneatlantico', '90000.00'),
+
+DELIMITER //
+CREATE TRIGGER control_departamento BEFORE INSERT ON sedes FOR EACH ROW
+BEGIN
+DECLARE msg VARCHAR(255);
+IF (NEW.nombre_departamento!='Ingles') THEN SET msg = 'La asignatura impartida es ingles';
+SIGNAL SQLSTATE '45000' SET message_text = msg;
+END IF;
+END //
