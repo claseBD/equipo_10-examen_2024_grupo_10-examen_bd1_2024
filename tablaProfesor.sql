@@ -33,3 +33,41 @@ IF (NEW.asignatura!='Ingles') THEN SET msg = 'La asignatura impartida es Ingles'
 SIGNAL SQLSTATE '45000' SET message_text = msg;
 END IF;
 END //
+
+-- CONSULTAS:
+-- Union: 
+-- SELECT ID, nombre, asignatura, salario
+-- FROM profesor
+-- WHERE salario > 50000
+-- UNION
+-- SELECT ID, nombre, asignatura, salario
+-- FROM profesor
+-- WHERE nombre LIKE 'P%';
+
+-- Interseccion:
+-- SELECT p1.ID, p1.nombre, p1.asignatura, p1.salario
+-- FROM profesor p1
+-- WHERE salario > 50000
+-- AND p1.ID IN (
+--     SELECT ID
+--     FROM profesor
+--     WHERE nombre LIKE 'P%'
+-- );
+
+-- Diferencia:
+-- SELECT ID, nombre, asignatura, salario
+-- FROM profesor
+-- WHERE salario <= 50000
+--   AND ID NOT IN (
+--     SELECT ID
+--     FROM profesor
+--     WHERE nombre LIKE 'P%'
+--   );
+
+-- Agregacion:
+-- SELECT SUM(salario) AS total_salario
+-- FROM profesor;
+
+
+
+
