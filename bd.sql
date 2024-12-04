@@ -146,3 +146,9 @@ ON
   s.nombre_departamento = p.asignatura
 WHERE 
   s.nombre_departamento IS NULL;
+
+
+-- Producto cartesiano
+SELECT *
+FROM tabla1
+CROSS JOIN tabla2;
