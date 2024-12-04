@@ -150,5 +150,5 @@ END //
 
 -- Producto cartesiano
 -- SELECT *
--- FROM tabla1
--- CROSS JOIN tabla2;
+-- FROM sede
+-- CROSS JOIN profesor;
