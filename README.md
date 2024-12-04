@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Or8Fo2E8)
 # Examen_bd_1_2024
 1. En el repositorio dado por el profesor, el equipo debe crear una rama por cada uno de sus integrantes y mantener la rama main como la común a todo el equipo.
 2. Cada integrante del equipo trabajará individualmente en su rama construyendo una tabla de la base de datos de la que deben garantizar todo el ddl requerido. De acuerdo a los requerimientos dados anteriormente cada estudiante debe garantizar para su tabla:
