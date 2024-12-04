@@ -39,6 +39,9 @@ DELIMITER ;
 --Respuestas a las preguntas:
 
 --a)No hay operación posible con una sola tabla.
+--  Resolución con segunda tabla improvisada:
+
+SELECT f.nombre FROM formaciones as f INTERSECT SELECT i.nombre FROM instructor as i;
 
 --b)
 SELECT `id`, `nombre`, `definicion`, `empresario` FROM `formaciones`
@@ -47,16 +50,35 @@ UNION
 SELECT `id`, `nombre`, `definicion`, `empresario`FROM `formaciones`
 WHERE `empresario = 'Fernando'`;
 
---c)No hay operación posible con una sola tabla.
+--c)
+SELECT f1.nombre FROM formaciones f1
+WHERE NOT EXISTS (
+    SELECT 1 FROM formaciones f2
+    WHERE f2.empresario = 'Fernando' AND f2.id != f1.id
+);
 
 --d)
 SELECT COUNT(f.nombre) FROM formaciones as f;
 
 --e)No hay operación posible con una sola tabla.
+--  Resolución con segunda tabla improvisada:
+
+SELECT * FROM formaciones NATURAL JOIN instructor;
 
 --f)No hay operación posible con una sola tabla.
+--  Resolución con segunda tabla improvisada:
+
+SELECT * FROM formaciones LEFT OUTER JOIN instructor ON formaciones.id = instructor.id;
 
 --g)No hay operación posible con una sola tabla.
+--  Resolución con segunda tabla improvisada:
+
+SELECT * FROM formaciones RIGHT OUTER JOIN instructor ON formaciones.id = instructor.id
 
 --h)No hay operación posible con una sola tabla.
+--  Resolución con segunda tabla improvisada:
+
+SELECT f.nombre FROM formaciones as f CROSS JOIN instructor as i;
+
+
 
